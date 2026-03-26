@@ -1,5 +1,9 @@
 # Use an OpenJDK Runtime as the base image
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+COPY . .
+# Adjust the line below to match your actual JAR filename
+CMD ["java", "-jar", "app.jar"]
 
 # Set the working directory inside the container
 WORKDIR /app
